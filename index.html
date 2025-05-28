@@ -1,199 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RapidGuard - Professional Machine Guarding Solutions</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Inaya Design and Development</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <!-- Header/Navigation -->
     <header>
-        <div class="container">
-            <div class="logo" data-editable="logo">
-                <h1>Rapid<span>Guard</span></h1>
-                <p>Machine Safety Solutions</p>
-            </div>
+        <div class="container header-flex">
+            <h1>Inaya Design & Development</h1>
             <nav>
-                <ul>
-                    <li><a href="#home" class="active">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#products">Products</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                <div class="mobile-menu-btn">
-                    <i class="fas fa-bars"></i>
-                </div>
+                <a href="#gallery">Gallery</a>
+                <a href="#products">Products</a>
+                <a href="#reviews">Reviews</a>
+                <a href="#contact">Contact</a>
             </nav>
         </div>
     </header>
 
-    <!-- Mobile Menu -->
-    <div class="mobile-menu">
-        <ul>
-            <li><a href="#home" class="active">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#products">Products</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </div>
-
-<!--test firebase -->
-<div id="firebase-status" style="position:fixed;top:10px;right:10px;padding:8px 16px;border-radius:4px;background:#eee;color:#333;z-index:9999;">
-  Checking Firebase connection...
-</div><!--test firebase -->
-
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content" data-editable="hero-content">
-                <h1>Industrial Machine Guarding Solutions</h1>
-                <p>Protecting your workforce with compliant, high-quality machine guards</p>
-                <a href="#contact" class="btn">Get a Free Quote</a>
+    <section class="hero">
+        <div class="container hero-flex">
+            <div>
+                <h2>Machine Safety Guard Solutions</h2>
+                <p>Protect your workforce and machinery with our innovative safety guard designs. We deliver quality, durability, and peace of mind.</p>
+                <a href="#contact" class="cta-btn">Get a Quote</a>
             </div>
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Machine Safety Guard" class="hero-img" />
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
+    <section id="gallery" class="gallery-section">
         <div class="container">
-            <h2 data-editable="services-title">Our Services</h2>
-            <div class="services-grid">
-                <div class="service-card" data-editable="service-1">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>Custom Guard Design</h3>
-                    <p>Tailored solutions for your specific machinery and safety requirements.</p>
+            <h2>Our Safety Guard Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/m1.jpg" alt="Standard Machine Guard" />
+                    <div class="gallery-details">
+                        <h3>Standard Machine Guard</h3>
+                        <p>Robust and reliable protection for general industrial machinery. Powder-coated finish for corrosion resistance.</p>
+                    </div>
                 </div>
-                <div class="service-card" data-editable="service-2">
-                    <i class="fas fa-cogs"></i>
-                    <h3>Installation</h3>
-                    <p>Professional installation by certified safety technicians.</p>
+                <div class="gallery-item">
+                    <img src="images/m2.jpg" alt="Industrial Machine Guard" />
+                    <div class="gallery-details">
+                        <h3>Industrial Machine Guard</h3>
+                        <p>Heavy-duty steel mesh guard for hazardous areas, ensuring maximum safety for operators.</p>
+                    </div>
                 </div>
-                <div class="service-card" data-editable="service-3">
-                    <i class="fas fa-clipboard-check"></i>
-                    <h3>Compliance Audits</h3>
-                    <p>Ensure your facility meets OSHA and ANSI safety standards.</p>
+                <div class="gallery-item">
+                    <img src="images/m3.jpg" alt="X-Guard Modular System" />
+                    <div class="gallery-details">
+                        <h3>X-Guard Modular System</h3>
+                        <p>Flexible modular panels, easy to install and reconfigure as per your production line needs.</p>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Products Section -->
-    <section id="products" class="products">
-        <div class="container">
-            <h2 data-editable="products-title">Our Products</h2>
-            <div class="product-categories">
-                <div class="category" data-editable="category-1">
-                    <img src="images/fixed-guard.jpg" alt="Fixed Guards">
-                    <h3>Fixed Guards</h3>
-                    <p>Permanent solutions for consistent protection.</p>
+                <div class="gallery-item">
+                    <img src="images/m4.jpg" alt="Custom Machine Guard" />
+                    <div class="gallery-details">
+                        <h3>Custom Machine Guard</h3>
+                        <p>Designed and fabricated as per client specifications for unique machinery setups.</p>
+                    </div>
                 </div>
-                <div class="category" data-editable="category-2">
-                    <img src="images/interlocked-guard.jpg" alt="Interlocked Guards">
-                    <h3>Interlocked Guards</h3>
-                    <p>Safety systems that prevent machine operation when open.</p>
+                <div class="gallery-item">
+                    <img src="images/m5.jpg" alt="Axelent X-Guard" />
+                    <div class="gallery-details">
+                        <h3>Axelent X-Guard</h3>
+                        <p>High-visibility mesh panels with quick-release locks for easy maintenance access.</p>
+                    </div>
                 </div>
-                <div class="category" data-editable="category-3">
-                    <img src="images/adjustable-guard.jpg" alt="Adjustable Guards">
-                    <h3>Adjustable Guards</h3>
-                    <p>Flexible solutions for varying operations.</p>
+                <div class="gallery-item">
+                    <img src="images/m6.jpg" alt="Transparent Safety Guard" />
+                    <div class="gallery-details">
+                        <h3>Transparent Safety Guard</h3>
+                        <p>Polycarbonate panels for clear visibility and protection from flying debris.</p>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="about-content" data-editable="about-content">
-                <h2>About RapidGuard</h2>
-                <p>With over 15 years of experience in industrial safety, RapidGuard specializes in designing and manufacturing compliant machine guarding solutions. Our team of certified safety professionals works closely with clients to assess risks and implement effective guarding strategies.</p>
-                <p>We serve industries including manufacturing, automotive, food processing, and more, helping them maintain safe working environments while optimizing productivity.</p>
-            </div>
-            <div class="about-image">
-                <img src="images/about-image.jpg" alt="About RapidGuard">
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 data-editable="contact-title">Contact Us</h2>
-            <form id="contactForm">
-                <div class="form-group">
-                    <input type="text" id="name" placeholder="Your Name" required>
+                <div class="gallery-item">
+                    <img src="images/m7.jpg" alt="Troax Machine Guard" />
+                    <div class="gallery-details">
+                        <h3>Troax Machine Guard</h3>
+                        <p>Certified safety fencing with modular design and strong steel construction.</p>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <input type="email" id="email" placeholder="Your Email" required>
-                </div>
-                <div class="form-group">
-                    <input type="tel" id="phone" placeholder="Your Phone">
-                </div>
-                <div class="form-group">
-                    <textarea id="message" placeholder="Your Message" required></textarea>
-                </div>
-                <button type="submit" class="btn">Send Message</button>
-            </form>
-            <div class="contact-info" data-editable="contact-info">
-                <div class="info-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <p>123 Safety Drive, Industrial Park, IN 12345</p>
-                </div>
-                <div class="info-item">
-                    <i class="fas fa-phone"></i>
-                    <p>+1 (555) 123-4567</p>
-                </div>
-                <div class="info-item">
-                    <i class="fas fa-envelope"></i>
-                    <p>info@rapidguard.com</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section" data-editable="footer-about">
-                    <h3>About RapidGuard</h3>
-                    <p>Providing compliant machine guarding solutions since 2008.</p>
-                </div>
-                <div class="footer-section" data-editable="footer-links">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#products">Products</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section" data-editable="footer-social">
-                    <h3>Follow Us</h3>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
+                <div class="gallery-item">
+                    <img src="images/m8.jpg" alt="Flexible Safety Guard" />
+                    <div class="gallery-details">
+                        <h3>Flexible Safety Guard</h3>
+                        <p>Adjustable and movable guard for temporary or changing workspaces.</p>
                     </div>
                 </div>
             </div>
-            <div class="copyright" data-editable="copyright">
-                <p>&copy; 2023 RapidGuard. All rights reserved.</p>
+        </div>
+    </section>
+
+    <section id="products" class="products-section">
+        <div class="container">
+            <h2>Our Products</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="https://5.imimg.com/data5/SELLER/Default/2022/4/ZW/XT/BN/15165849/machine-guard-500x500.jpg" alt="Standard Guard" />
+                    <h3>Standard Machine Guard</h3>
+                    <p>Ideal for most industrial machines, offering robust protection and easy maintenance.</p>
+                </div>
+                <div class="product-card">
+                    <img src="https://www.axelent.com/globalassets/02-products/machine-guarding/x-guard/x-guard-hero.jpg" alt="Modular Guard" />
+                    <h3>Modular Safety Guard</h3>
+                    <p>Quick to assemble and modify, perfect for dynamic production environments.</p>
+                </div>
+                <div class="product-card">
+                    <img src="https://www.essentracomponents.com/en-gb/news/images/machine-guarding-hero.jpg" alt="Transparent Guard" />
+                    <h3>Transparent Guard</h3>
+                    <p>Polycarbonate shields for operator safety with maximum visibility.</p>
+                </div>
+                <div class="product-card">
+                    <img src="https://cdn2.hubspot.net/hubfs/2523515/machine-guarding-1.jpg" alt="Flexible Guard" />
+                    <h3>Flexible Machine Guard</h3>
+                    <p>Portable and adaptable, suitable for temporary workstations and changing layouts.</p>
+                </div>
             </div>
         </div>
-    </footer>
+    </section>
 
-    <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database-compat.js"></script>
-    <script src="js/firebase-config.js"></script>
-    <script src="js/app.js"></script>
+    <section id="reviews" class="reviews-section">
+        <div class="container">
+            <h2>Customer Reviews</h2>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p>"The safety guards from Inaya are top-notch. Installation was quick and the build quality is excellent!"</p>
+                    <span>- Michael D., Factory Manager</span>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p>"We ordered custom machine guards and received exactly what we needed. Great service and support."</p>
+                    <span>- Priya S., Plant Head</span>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p>"Highly recommend Inaya for any industrial safety needs. Their team is professional and responsive."</p>
+                    <span>- Arjun K., Operations Lead</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container footer-flex">
+            <div>
+                <h2>Contact Us</h2>
+                <p>
+                    <strong>Phone:</strong> +91-8755759338<br />
+                    <strong>Email:</strong> info@inayadd.com<br />
+                    <strong>Address:</strong> Plot No. 123, Industrial Area, India
+                </p>
+            </div>
+            <div class="social-links">
+                <a href="https://facebook.com/" target="_blank" title="Facebook"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" /></a>
+                <a href="https://instagram.com/" target="_blank" title="Instagram"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" /></a>
+                <a href="https://youtube.com/" target="_blank" title="YouTube"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" /></a>
+                <a href="https://wa.me/+918755759338" target="_blank" title="WhatsApp"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" /></a>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2025 Inaya Design and Development. All rights reserved.
+        </div>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
