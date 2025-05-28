@@ -1,3 +1,7 @@
+IMAGES:
+m1.jpg
+https://example.com/extra-image.jpg
+
 Standard Machine Guard
 ----------------------
 - Robust and reliable protection for general industrial machinery.
