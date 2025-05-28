@@ -4,12 +4,9 @@
     <meta charset="UTF-8">
     <title>Product Details | Inaya Design & Development</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Main CSS -->
     <link rel="stylesheet" href="style.css" />
     <style>
-        /* Extra styles just for details page */
         .details-hero {
             background: linear-gradient(90deg, #e3f2fd 60%, #fff 100%);
             padding: 46px 0 36px 0;
@@ -29,6 +26,20 @@
             margin-bottom: 18px;
             margin-top: 0;
             letter-spacing: 1px;
+        }
+        .details-images {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 22px;
+        }
+        .details-images img {
+            width: 220px;
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,91,159,0.12);
+            object-fit: cover;
+            background: #eaeaea;
         }
         #content {
             font-size: 1.13rem;
@@ -55,11 +66,12 @@
         @media (max-width: 750px) {
             .details-container { padding: 20px 6vw 18px 6vw; }
             .details-title { font-size: 1.25rem; }
+            .details-images img { width: 100%; max-width: 100%; }
+            .details-images { flex-direction: column; gap: 10px;}
         }
     </style>
 </head>
 <body>
-    <!-- Header (same as homepage) -->
     <header>
         <div class="container header-flex">
             <h1>Inaya Design & Development</h1>
@@ -72,16 +84,15 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="details-hero">
         <div class="details-container">
+            <div class="details-images" id="details-images"></div>
             <h2 class="details-title" id="details-title">Product Details</h2>
             <div id="content">Loading...</div>
             <a href="index.html" class="back-btn">← Back to Home</a>
         </div>
     </section>
 
-    <!-- Footer (same as homepage) -->
     <footer>
         <div class="container footer-flex">
             <div>
@@ -104,12 +115,36 @@
         </div>
     </footer>
 
-    <!-- JS for loading .txt file -->
     <script>
         function getFileName() {
             const params = new URLSearchParams(window.location.search);
             return params.get('file');
         }
+
+        function parseDetailsFile(data) {
+            // Parse images
+            let images = [];
+            let lines = data.split('\n');
+            let contentStart = 0;
+            if (lines[0].trim().toUpperCase() === 'IMAGES:') {
+                for (let i = 1; i < lines.length; i++) {
+                    if (lines[i].trim() === '') {
+                        contentStart = i + 1;
+                        break;
+                    }
+                    images.push(lines[i].trim());
+                }
+            }
+            // The rest is content
+            let contentLines = lines.slice(contentStart);
+            let title = "Product Details";
+            if (contentLines.length > 0 && contentLines[0].trim() !== "") {
+                title = contentLines[0].trim();
+                contentLines = contentLines.slice(1);
+            }
+            return { images, title, content: contentLines.join('\n').trim() };
+        }
+
         function loadContent() {
             const fileName = getFileName();
             if (fileName) {
@@ -119,14 +154,24 @@
                         return response.text();
                     })
                     .then(data => {
-                        // First line as title, rest as content
-                        const lines = data.split('\n');
-                        if (lines.length > 1) {
-                            document.getElementById('details-title').innerText = lines[0];
-                            document.getElementById('content').innerText = lines.slice(1).join('\n');
-                        } else {
-                            document.getElementById('content').innerText = data;
+                        const details = parseDetailsFile(data);
+
+                        // Show images
+                        const imgDiv = document.getElementById('details-images');
+                        imgDiv.innerHTML = '';
+                        if (details.images.length > 0) {
+                            details.images.forEach(url => {
+                                // If it's a relative path, use as is; if absolute, use as is
+                                let img = document.createElement('img');
+                                img.src = url;
+                                img.alt = details.title;
+                                imgDiv.appendChild(img);
+                            });
                         }
+
+                        // Show title and content
+                        document.getElementById('details-title').innerText = details.title;
+                        document.getElementById('content').innerText = details.content || "No details available.";
                     })
                     .catch(error => {
                         document.getElementById('content').innerText = 'Could not load content.';
