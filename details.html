@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <title>डिटेल्स पेज</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Roboto', sans-serif; margin: 40px; }
+        #content { background: #f9f9f9; padding: 20px; border-radius: 8px; min-height: 200px; }
+        a { display: inline-block; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h2>प्रोडक्ट डिटेल्स</h2>
+    <div id="content">लोड हो रहा है...</div>
+    <a href="index.html">← Back to Home</a>
+
+    <script>
+        function getFileName() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get('file');
+        }
+
+        function loadContent() {
+            const fileName = getFileName();
+            if (fileName) {
+                fetch(fileName)
+                    .then(response => {
+                        if (!response.ok) throw new Error('File not found');
+                        return response.text();
+                    })
+                    .then(data => {
+                        document.getElementById('content').innerText = data;
+                    })
+                    .catch(error => {
+                        document.getElementById('content').innerText = 'सामग्री लोड नहीं हो पाई।';
+                    });
+            } else {
+                document.getElementById('content').innerText = 'कोई जानकारी उपलब्ध नहीं है।';
+            }
+        }
+
+        loadContent();
+    </script>
+</body>
+</html>
